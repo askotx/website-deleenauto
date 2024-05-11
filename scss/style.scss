@@ -196,7 +196,7 @@ $btn-border-radius: 30px;
 }
 
 html {
-    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+   font-family: $font-family-sans-serif;
     h1 {
         font-size: 45px;
     }
