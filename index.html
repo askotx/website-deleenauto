@@ -110,21 +110,21 @@
 <div class="container position-relative" style="top: -120px;">
   <h3 style="font-size: 20px; color: white;"> Bekijk beschikbare auto's in jouw buurt</h3>
 </div>
-<div class="container bg-primary py-3 position-relative rounded pt-5" style="top: -120px; max-width: 1150px; height: 120px;">
+<div class="container bg-primary py-3 position-relative rounded pt-4 align-items-center" style="top: -120px; max-width: 1150px; height: 100px;">
   <img src="img/favicon-deleeenauto.png" alt="Logo" style="width: 160px; position: absolute; top: -120px; left: 50%; transform: translateX(400px);">
-  <div class="row justify-content-center align-items-center">
-    <div class="col-md-5">
+  <div class="row  align-items-center">
+    <div class="col-md-4 offset-lg-1">
       <form class="form-inline">
         <div class="form-group mb-2">
-          <label for="inputLocation" class="mr-2">Locatie</label>
+          <label for="inputLocation" class="mr-2" style="font-size: 18px; font-weight: 500;">Locatie</label>
           <input type="text" class="form-control" id="inputLocation">
         </div>
       </form>
     </div>
-    <div class="col-md-5">
+    <div class="col-md-6">
       <form class="form-inline">
         <div class="form-group mb-2">
-          <label for="inputDate" class="mr-2">Datum</label>
+          <label for="inputDate" class="mr-2" style="font-size: 18px; font-weight: 500;">Datum</label>
           <input type="date" class="form-control" id="inputDate">
         </div>
         <button type="submit" class="btn btn-light mb-2 rounded-0 ml-4">Bekijk beschikbaarheid</button>
@@ -186,17 +186,18 @@
 
 
     <!-- welcome Start -->
-    <div class="container-fluid py-5">
+    <div class="container-fluid py-0 pb-5">
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-lg-5">
+          <div class="col-lg-6">
             <img
               class="img-fluid rounded mb-5 mb-lg-0"
-              src="img/about-1.jpg"
-              alt=""
+              src="img/intro-home.jpg"
+              alt="woman-driving"
+              style="width: 95%;"
             />
           </div>
-          <div class="col-lg-7">
+          <div class="col-lg-6 ">
             
             <h1 class="mb-4">Welkom bij DeLeenauto</h1>
             <p>
@@ -220,7 +221,7 @@
                 
             </div>
             <div class="row ">
-                <div class="col-lg-6 mb-5 ">
+                <div class="col-lg-5 mb-5 offset-lg-1 mr-3">
                     <div class="card border-0 bg-primary shadow-sm pb-2">
                         <img class="card-img-top mb-2" src="img/Wil jij jouw auto uitlenen.jpg" alt="" />
                         <div class="card-body text-center">
@@ -231,10 +232,10 @@
                             </p>
                         </div>
                         
-                        <a href="" class="btn btn-light px-4 mx-auto mb-4" >Join Now</a>
+                        <a href="" class="btn btn-light px-5 mx-auto mb-4" >Join Now</a>
                     </div>
                 </div>
-                <div class="col-lg-6 mb-5">
+                <div class="col-lg-5 mb-5 ml-3">
                     <div class="card border-0  shadow-sm pb-2">
                         <img class="card-img-top mb-2" src="img/Hoe leen ik een auto.jpg" alt="" />
                         <div class="card-body text-center">
@@ -244,7 +245,7 @@
                             </p>
                         </div>
                         
-                        <a href="" class="btn btn-primary px-4 mx-auto mb-5">Join Now</a>
+                        <a href="" class="btn btn-primary px-5 mx-auto mb-5">Join Now</a>
                     </div>
                 </div>
             </div>
@@ -252,86 +253,7 @@
     </div> 
     <!-- services End -->
 
-    <!-- FAQ -->
-    <div class="container-fluid py-5">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-7 mb-5 mb-lg-0">
-            
-            <h1 class="mb-4">FAQ</h1>
-            <p>
-              Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo
-              dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo.
-              Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est
-              dolor
-            </p>
-            <ul class="list-inline m-0">
-              <li class="py-2">
-                <i class="fa fa-check text-success mr-3"></i>Labore eos amet
-                dolor amet diam
-              </li>
-              <li class="py-2">
-                <i class="fa fa-check text-success mr-3"></i>Etsea et sit dolor
-                amet ipsum
-              </li>
-              <li class="py-2">
-                <i class="fa fa-check text-success mr-3"></i>Diam dolor diam
-                elitripsum vero.
-              </li>
-            </ul>
-            <a href="" class="btn btn-primary mt-4 py-2 px-4">Book Now</a>
-          </div>
-          <div class="col-lg-5">
-
-            <!-- ACCORDION START  -->
-            
-            <div class="accordion" id="accordionExample"  >
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                    Accordion Item #1
-                  </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample" style="">
-                  <div class="accordion-body">
-                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Accordion Item #2
-                  </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Accordion Item #3
-                  </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- ACCORDION End-->
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- FAQ End -->
+    
 
 
     <!-- Testimonial Start -->
@@ -351,14 +273,14 @@
               <h3 class="fas fa-quote-left text-primary mr-3"></h3>
               Nuttig platform! Vond snel een geschikte auto om te lenen voor mijn behoeften. Betrouwbaarheid en gemak maken Deleenauto mijn favoriete keuze voor auto lenen. Aanbevolen!
             </div>
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center mt-5">
               <img
                 class="rounded-circle"
                 src="img/Testimonial1.png"
                 style="width: 70px; height: 70px"
                 alt="Image"
               />
-              <div class="pl-3">
+              <div class="pl-3 ">
                 <h5>Ans Brouwer</h5>
               </div>
             </div>
@@ -370,7 +292,7 @@
               <h3 class="fas fa-quote-left text-primary mr-3"></h3>
               Geweldige ervaring als auto-uitlener! Deleenauto maakt het eenvoudig om mijn auto te delen. Betrouwbaarheid en veiligheid staan voorop. Een aanrader voor wie zijn auto wil delen!
             </div>
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center mt-5">
               <img
                 class="rounded-circle"
                 src="img/Testimonial2.png"
@@ -390,7 +312,7 @@
               <h3 class="fas fa-quote-left text-primary mr-3"></h3>
               Topervaring als lener! De leenauto biedt een breed scala aan auto's, gemakkelijk te boeken en vriendelijke communicatie met uitleners. Betrouwbaarheid en flexibel
             </div>
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center mt-5">
               <img
                 class="rounded-circle"
                 src="img/Testimonial3.png"
@@ -410,7 +332,7 @@
               <h3 class="fas fa-quote-left text-primary mr-3"></h3>
               Super ervaring als lener! Deleenauto heeft een handig platform, vriendelijke verhuurders en mooie auto's. 
             </div>
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center mt-5">
               <img
                 class="rounded-circle"
                 src="img/Testimonial5.png"
@@ -431,7 +353,7 @@
               <h3 class="fas fa-quote-left text-primary mr-3"></h3>
               Topservice voor leners! Deleenauto biedt een gebruiksvriendelijk platform, diverse auto-opties en vriendelijke verhuurders. Betrouwbaarheid en flexibiliteit maken het een eerste keuze voor het lenen van een auto!
             </div>
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center mt-5">
               <img
                 class="rounded-circle"
                 src="img/Testimonial4.png"
