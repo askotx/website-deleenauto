@@ -212,3 +212,11 @@ html {
         font-size: 18px;
     }
 }
+
+@media (max-width: 425px) {
+    html {
+        h1 {
+            font-size: 35px;
+        }
+    }
+}

@@ -82,41 +82,35 @@
     </div>
     <!-- Navbar End -->
 
-    <!--Hero start-->
-    <div
-      class="container-fluid bg-primary mb-5"
-      style="background-image: url(img/Hero\ deleenauto.jpg)"
-    >
-      <div
-        class="d-flex flex-column align-items-center justify-content-center"
-        style="min-height: 540px"
-      >
-        <h1 class="display-5 font-weight-bold text-white text-center">
-          Slimme mobiliteit begint hier: Ontdek ons <br />
-          autodeelplatform
-        </h1>
-        <div class="d-inline-flex text-white">
-          <h3 class="text-white mt-5">
-            Samen werken aan een meer duurzame planeet
-          </h3>
-        </div>
-      </div>
+   <!-- Hero start -->
+<div class="container-fluid bg-primary hero-section">
+  <div class="d-flex flex-column align-items-center justify-content-center hero-content">
+    <h1 class="hero-title">
+      Slimme mobiliteit begint hier: Ontdek ons <br />
+      autodeelplatform
+    </h1>
+    <div class="d-inline-flex text-white">
+      <h3 class="hero-subtitle">
+        Samen werken aan een meer duurzame planeet
+      </h3>
     </div>
-    <!--Hero end-->
+  </div>
+</div>
+<!-- Hero end -->
 
 
 
 <!-- Search bar -->
-<div class="container position-relative" style="top: -120px;">
-  <h3 style="font-size: 20px; color: white;"> Bekijk beschikbare auto's in jouw buurt</h3>
+<div class="container position-relative search-bar-header">
+  <h3 class="search-bar-title">Bekijk beschikbare auto's in jouw buurt</h3>
 </div>
-<div class="container bg-primary py-3 position-relative rounded pt-4 align-items-center" style="top: -120px; max-width: 1150px; height: 100px;">
-  <img src="img/favicon-deleeenauto.png" alt="Logo" style="width: 160px; position: absolute; top: -120px; left: 50%; transform: translateX(400px);">
-  <div class="row  align-items-center">
+<div class="container search-bar bg-primary py-3 position-relative rounded pt-4 align-items-center">
+  <img src="img/favicon-deleeenauto.png" alt="Logo" class="search-bar-logo">
+  <div class="row align-items-center">
     <div class="col-md-4 offset-lg-1">
       <form class="form-inline">
         <div class="form-group mb-2">
-          <label for="inputLocation" class="mr-2" style="font-size: 18px; font-weight: 500;">Locatie</label>
+          <label for="inputLocation" class="mr-2 location-label">Locatie</label>
           <input type="text" class="form-control" id="inputLocation">
         </div>
       </form>
@@ -124,14 +118,13 @@
     <div class="col-md-6">
       <form class="form-inline">
         <div class="form-group mb-2">
-          <label for="inputDate" class="mr-2" style="font-size: 18px; font-weight: 500;">Datum</label>
+          <label for="inputDate" class="mr-2 date-label">Datum</label>
           <input type="date" class="form-control" id="inputDate">
         </div>
         <button type="submit" class="btn btn-light mb-2 rounded-0 ml-4">Bekijk beschikbaarheid</button>
       </form>
     </div>
   </div>
-</div>
 </div>
 
 <!-- Search bar End-->
