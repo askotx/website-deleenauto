@@ -9339,7 +9339,7 @@ a.text-gray-bc:hover, a.text-gray-bc:focus {
   }
 }
 .hero-section {
-  background-image: url("/img/Hero deleenauto.jpg");
+  background-image: url("img/Hero deleenauto.jpg");
   min-height: 540px;
 }
 .hero-section .hero-content {
@@ -9361,7 +9361,7 @@ a.text-gray-bc:hover, a.text-gray-bc:focus {
 }
 
 .hero-section-2 {
-  background-image: url("/img/aanbod hero.jpg");
+  background-image: url("img/aanbod hero.jpg");
   min-height: 460px;
 }
 .hero-section-2 .hero-content-2 {
@@ -9383,7 +9383,7 @@ a.text-gray-bc:hover, a.text-gray-bc:focus {
 }
 
 .hero-section-3 {
-  background-image: url("/img/uitlenen hero.jpg");
+  background-image: url("img/uitlenen hero.jpg");
   min-height: 460px;
 }
 .hero-section-3 .hero-content-3 {
@@ -9405,7 +9405,7 @@ a.text-gray-bc:hover, a.text-gray-bc:focus {
 }
 
 .hero-section-4 {
-  background-image: url("/img/contact hero.jpg");
+  background-image: url("img/contact hero.jpg");
   min-height: 400px;
 }
 .hero-section-4 .hero-content-4 {
