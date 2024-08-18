@@ -1,126 +1,126 @@
 // Styles for the first hero section
 .hero-section {
-    background-image: url('../img/Hero\ deleenauto.jpg');
-    min-height: 540px;
-  
-    .hero-content {
+  background-image: url('../img/Hero\ deleenauto.jpg');
+  min-height: 540px;
+
+  .hero-content {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 540px;
-    }
-  
-    .hero-title {
+  }
+
+  .hero-title {
       font-size: 2.5rem; // Corresponds to display-5
       font-weight: bold;
       color: #fff;
       text-align: center;
-    }
-  
-    .hero-subtitle {
+  }
+
+  .hero-subtitle {
       color: #fff;
       margin-top: 3rem;
-    }
   }
-  
-  // Styles for the second hero section
-  .hero-section-2 {
-    background-image: url('../img/aanbod\ hero.jpg');
-    min-height: 460px;
-  
-    .hero-content-2 {
+}
+
+// Styles for the second hero section
+.hero-section-2 {
+  background-image: url('../img/aanbod\ hero.jpg');
+  min-height: 460px;
+
+  .hero-content-2 {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 460px;
-    }
-  
-    .hero-title-2 {
+  }
+
+  .hero-title-2 {
       font-size: 2.5rem; // Corresponds to display-5
       font-weight: bold;
       color: #fff;
       text-align: center;
-    }
-  
-    .hero-subtitle-2 {
+  }
+
+  .hero-subtitle-2 {
       color: #fff;
       margin-top: 3rem;
-    }
   }
-  
-  // Styles for the third hero section
-  .hero-section-3 {
-    background-image: url("../img/uitlenen\ hero.jpg");
-    min-height: 460px;
-  
-    .hero-content-3 {
+}
+
+// Styles for the third hero section
+.hero-section-3 {
+  background-image: url("../img/uitlenen\ hero.jpg");
+  min-height: 460px;
+
+  .hero-content-3 {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 460px;
-    }
-  
-    .hero-title-3 {
+  }
+
+  .hero-title-3 {
       font-size: 2.5rem; // Corresponds to display-5
       font-weight: bold;
       color: #fff;
       text-align: center;
-    }
-  
-    .hero-subtitle-3 {
+  }
+
+  .hero-subtitle-3 {
       color: #fff;
       margin-top: 3rem;
-    }
   }
-  
-  // Styles for the fourth hero section
-  .hero-section-4 {
-    background-image: url('../img/contact\ hero.jpg');
-    min-height: 400px;
-  
-    .hero-content-4 {
+}
+
+// Styles for the fourth hero section
+.hero-section-4 {
+  background-image: url('../img/contact\ hero.jpg');
+  min-height: 400px;
+
+  .hero-content-4 {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 400px;
-    }
-  
-    .hero-title-4 {
+  }
+
+  .hero-title-4 {
       font-size: 2.5rem; // Corresponds to display-5
       font-weight: bold;
       color: #fff;
       text-align: center;
-    }
-  
-    .hero-subtitle-4 {
+  }
+
+  .hero-subtitle-4 {
       color: #fff;
       margin-top: 3rem;
-    }
   }
-  
-  // Responsive Styles
-  @media (max-width: 768px) {
-    .hero-title, .hero-title-2, .hero-title-3, .hero-title-4 {
+}
+
+// Responsive Styles
+@media (max-width: 768px) {
+  .hero-title, .hero-title-2, .hero-title-3, .hero-title-4 {
       font-size: 2rem; // Adjust font size for smaller screens
-    }
-  
-    .hero-subtitle, .hero-subtitle-2, .hero-subtitle-3, .hero-subtitle-4 {
+  }
+
+  .hero-subtitle, .hero-subtitle-2, .hero-subtitle-3, .hero-subtitle-4 {
       font-size: 1.5rem; // Adjust subtitle size for smaller screens
-    }
   }
+}
+
+@media (max-width: 425px) {
   
-  @media (max-width: 425px) {
-    .hero-title, .hero-title-2, .hero-title-3, .hero-title-4 {
-      font-size: 1.75rem; // Further adjust font size for small screens
-    }
-  
-    .hero-subtitle, .hero-subtitle-2, .hero-subtitle-3, .hero-subtitle-4 {
-      font-size: 1.25rem; // Further adjust subtitle size for small screens
+  .hero-title, .hero-title-2, .hero-title-3, .hero-title-4 {
+      font-size: 27px; // Further adjust font size for small screens
+  }
+
+  .hero-subtitle, .hero-subtitle-2, .hero-subtitle-3, .hero-subtitle-4 {
+      font-size: 25px; // Further adjust subtitle size for small screens
       margin-top: 2rem;
-    }
   }
-  
+}

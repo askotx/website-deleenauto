@@ -70,7 +70,9 @@
         transform: translateX(100px);
         margin-bottom: 0rem;
       }
-      
+      .inside {
+        margin-top: -130px;
+      }
       .location-label,
       .date-label {
         display: block;

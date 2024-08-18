@@ -9436,10 +9436,10 @@ a.text-gray-bc:hover, a.text-gray-bc:focus {
 }
 @media (max-width: 425px) {
   .hero-title, .hero-title-2, .hero-title-3, .hero-title-4 {
-    font-size: 1.75rem;
+    font-size: 27px;
   }
   .hero-subtitle, .hero-subtitle-2, .hero-subtitle-3, .hero-subtitle-4 {
-    font-size: 1.25rem;
+    font-size: 25px;
     margin-top: 2rem;
   }
 }
@@ -9503,6 +9503,9 @@ a.text-gray-bc:hover, a.text-gray-bc:focus {
     left: 0;
     transform: translateX(100px);
     margin-bottom: 0rem;
+  }
+  .search-bar .inside {
+    margin-top: -130px;
   }
   .search-bar .location-label,
   .search-bar .date-label {
@@ -9775,7 +9778,7 @@ html h5 {
 
 @media (max-width: 425px) {
   html h1 {
-    font-size: 35px;
+    font-size: 30px;
   }
 }
 
