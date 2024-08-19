@@ -2,6 +2,9 @@
 .hero-section {
   background-image: url('../img/Hero\ deleenauto.jpg');
   min-height: 540px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
   .hero-content {
       display: flex;
@@ -28,6 +31,9 @@
 .hero-section-2 {
   background-image: url('../img/aanbod\ hero.jpg');
   min-height: 460px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
   .hero-content-2 {
       display: flex;
@@ -54,6 +60,9 @@
 .hero-section-3 {
   background-image: url("../img/uitlenen\ hero.jpg");
   min-height: 460px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
   .hero-content-3 {
       display: flex;
@@ -80,6 +89,9 @@
 .hero-section-4 {
   background-image: url('../img/contact\ hero.jpg');
   min-height: 400px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
   .hero-content-4 {
       display: flex;
@@ -124,3 +136,4 @@
       margin-top: 2rem;
   }
 }
+ 

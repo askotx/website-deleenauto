@@ -9341,6 +9341,9 @@ a.text-gray-bc:hover, a.text-gray-bc:focus {
 .hero-section {
   background-image: url("../img/Hero deleenauto.jpg");
   min-height: 540px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .hero-section .hero-content {
   display: flex;
@@ -9363,6 +9366,9 @@ a.text-gray-bc:hover, a.text-gray-bc:focus {
 .hero-section-2 {
   background-image: url("../img/aanbod hero.jpg");
   min-height: 460px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .hero-section-2 .hero-content-2 {
   display: flex;
@@ -9385,6 +9391,9 @@ a.text-gray-bc:hover, a.text-gray-bc:focus {
 .hero-section-3 {
   background-image: url("../img/uitlenen hero.jpg");
   min-height: 460px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .hero-section-3 .hero-content-3 {
   display: flex;
@@ -9407,6 +9416,9 @@ a.text-gray-bc:hover, a.text-gray-bc:focus {
 .hero-section-4 {
   background-image: url("../img/contact hero.jpg");
   min-height: 400px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .hero-section-4 .hero-content-4 {
   display: flex;
@@ -9475,15 +9487,25 @@ a.text-gray-bc:hover, a.text-gray-bc:focus {
     max-width: 90%;
     height: auto;
     padding-bottom: 1rem;
+    justify-content: center;
   }
   .search-bar .search-bar-logo {
     width: 120px;
     top: -90px;
-    transform: translateX(300px);
+    transform: translateX(250px);
+  }
+  .search-bar .col-md-6 {
+    min-width: 100% !important;
+  }
+  .search-bar .inside {
+    display: block;
   }
   .search-bar .location-label,
   .search-bar .date-label {
-    font-size: 16.2px;
+    display: block;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    justify-content: center;
   }
 }
 @media (max-width: 425px) {
@@ -9560,11 +9582,12 @@ a.text-gray-bc:hover, a.text-gray-bc:focus {
     max-width: 90%;
     height: auto;
     padding-bottom: 1rem;
+    display: flex;
   }
   .benefits-section .benefits-logo {
     width: 120px;
     top: -90px;
-    transform: translateX(300px);
+    transform: translateX(250px);
   }
   .benefits-section .benefits-content {
     padding-right: 1.5rem;
@@ -9589,6 +9612,9 @@ a.text-gray-bc:hover, a.text-gray-bc:focus {
     transform: translateX(100px);
     margin-bottom: 0rem;
   }
+  .benefits-section .inside {
+    margin-top: -130px;
+  }
   .benefits-section .benefits-content {
     padding: 1rem;
   }
@@ -9604,6 +9630,34 @@ a.text-gray-bc:hover, a.text-gray-bc:focus {
     margin-top: 0.5rem;
   }
 }
+.contactLogo {
+  width: 160px;
+  position: absolute;
+  top: -120px;
+  left: -5%;
+  transform: translateX(350px);
+}
+
+@media (max-width: 425px) {
+  .contactLogo {
+    position: relative;
+    top: -120px;
+    left: 0;
+    transform: translateX(100px);
+    margin-bottom: 0rem;
+  }
+  #contactForm {
+    margin-top: -100px;
+  }
+}
+.callToAction {
+  background-color: rgb(255, 81, 0);
+  background-image: url(../../../../img/call\ to\ action\ aanbod.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 /********** Custom CSS ************/
 .section-title {
   position: relative;
