@@ -103,35 +103,35 @@
 
 // Carrusel card
 
-$('.owl-carousel').owlCarousel({
-    loop: true,
-    margin: 0,
-	autoplay: true,
-        smartSpeed: 1500,
-        dots: true,
-        loop: true,
-        nav : true,
-	navText : [
-            '<i class="fa fa-angle-left" aria-hidden="true"></i>',
-            '<i class="fa fa-angle-right" aria-hidden="true"></i>'
-        ],
-    responsiveClass: true,
-    responsive: {
-        0:{
-            items: 1,
-        },
-        768:{
-            items: 2,
-        },
-        1100:{
-            items: 3,
-        },
-        1400:{
-            items: 3,
-            loop: true,
-        }
-    }
-});
+// $('.owl-carousel').owlCarousel({
+//   loop: true,
+//   margin: 0,
+//   autoplay: true,
+//   smartSpeed: 1500,
+//   dots: true,
+//   loop: true,
+//   nav : true,
+//   navText : [
+//       '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+//       '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+//   ],
+//   responsiveClass: true,
+//   responsive: {
+//     0:{
+//         items: 1,
+//     },
+//     768:{
+//         items: 2,
+//     },
+//     1100:{
+//         items: 3,
+//     },
+//     1400:{
+//         items: 3,
+//         loop: true,
+//     }
+//   }
+// });
 
 /**
  * Owl Carousel v2.3.4
