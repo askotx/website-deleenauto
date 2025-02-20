@@ -375,8 +375,48 @@
     <div class="spacer120" style="min-height: 120px;">
     </div>
 
-  <!-- Footer-->
+    <!-- Car Card Modal Dialog -->
+    <div id="" class="modal fade modal-window" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 id="exampleModalLabel" class="modal-title">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="product-img">
+              <img id="car-image" src="" alt="" class="img-fluid d-block mx-auto">
+            </div>
+            <br />
+            <form>
+              <div class="input-group mb-3">
+                <span id="basic-addon1" class="input-group-text">Price per day €</span>
+                <input id="car-price" type="text" readonly="readonly" class="form-control" placeholder="Car price" aria-label="CarPrice" aria-describedby="basic-addon1">
+              </div>
+              <div class="input-group mb-3">
+                <span id="basic-addon2" class="input-group-text">Days</span>
+                <input id="days-to-loan" type="number" class="form-control" placeholder="0" aria-label="Days" aria-describedby="basic-addon2" onchange="calcLoan()">
+              </div>
+              <div class="input-group mb-3">
+                <span id="basic-addon3" class="input-group-text">Total €</span>
+                <input id="total-to-pay" class="form-control" readonly="readonly" aria-label="Total" aria-describedby="basic-addon3"></textarea>
+              </div>
+            </form>
+            <h6 style="font-size: 0.67em !important;">*NOTE: It may add some discounts (according to days) and some extra surcharge if loan is took in weekends, holidays, etc</h6>
+            <div class="modal-extra">
 
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Pend Name</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- End Car Card Modal Dialog -->
+
+  <!-- Footer-->
   <footer class="py-5" style="background-color: #E6E6E6;">
     <div class="container">
         <img class="img-fluid mb-4 mx-auto d-block" src="./img/Logo.png" alt="logo" width="270px">
@@ -435,33 +475,107 @@
     <script type="module">
       const externalUrl = "https://deleenautotemporal.online";
       const apiCallId = "car/list/1/5/1/0";
-  
+      const fetchHeaders = { "Content-Type": "application/x-www-form-urlencoded", };
+      let rowList = [];
+
+      window.showModal = async (carId) => {
+        const carItem = rowList.filter(item => item.CarId == carId)[0];
+        const modalTitle = document.querySelector('.modal-title');
+        modalTitle.textContent = `${carItem.CarModel} ${carItem.CarManufacturerName} ${carItem.CarYear}`;
+        document.querySelector("#car-price").value = carItem.CarPriceRent;
+        document.querySelector("#car-image").src = `${externalUrl}/${carItem.FilePath}/${carItem.FileName}`;
+        document.getElementById("days-to-loan").value = 0;
+        document.getElementById("total-to-pay").value = 0;
+
+        const formData = {
+          CarId: carItem.CarId,
+          LanguageCode: "en",
+        };
+        const data = new URLSearchParams();
+        data.append('CarId', carItem.CarId);
+        data.append('LanguageCode', 'en');
+
+        const response = await fetch(`${externalUrl}/car/feature/detail/localized/list`, {
+          method: "POST",
+          headers: fetchHeaders,
+          body: data,
+        });
+
+        const result = await response.json();
+        let i = 0;
+        let domResult = "";
+
+        for (let key in result) {
+          if (result[i].CarFeatureDetailIsUsed > 0){
+            domResult +=
+`<span class="badge text-bg-primary">\n`
+              if (result[i].CarFeatureType == 0 && result[i].CarFeatureDetailValue > 0){
+                domResult += 
+`  <span class="badge rounded-pill text-bg-success">
+    <i class="fa-solid fa-check"></i>
+  </span>\n`
+              }
+              if (result[i].CarFeatureType == 0 && result[i].CarFeatureDetailValue < 1){
+                domResult += 
+`  <span class="badge rounded-pill text-bg-danger">
+    <i class="fa-solid fa-xmark"></i>
+  </span>\n`
+              }
+              if (result[i].CarFeatureType > 0){
+                domResult +=
+`  <span>${result[i].CarFriendlyNameLocalized}: ${result[i].CarFeatureDetailValue}</span>\n`
+              }
+              else{
+                domResult += 
+`  <span>${result[i].CarFriendlyNameLocalized}</span>\n`
+              }
+            domResult += `</span>\n`;
+          }
+          i++;
+        }
+        //console.log(domResult);
+        document.querySelector(".modal-extra").innerHTML = domResult;
+      };
+
+      window.calcLoan = async () => {
+        let pricePerDay = Number(document.getElementById("car-price").value);
+        let days = Number(document.getElementById("days-to-loan").value);
+        if (days < 0 || days > 30){
+          document.getElementById("days-to-loan").value = 0;
+          document.getElementById("total-to-pay").value = 0;
+          return;
+        } 
+        let total = pricePerDay * days;
+        document.getElementById("total-to-pay").value = `${total}`;
+
+      };
       const response = await fetch(`${externalUrl}/${apiCallId}`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
+        headers: fetchHeaders,
         body: JSON.stringify({ filter: "" }),
       });
   
       const result = await response.json();
       let newContent = "";
+      rowList = result.rows;
 
-      result.rows.map(item =>{
+      rowList.map(item =>{
         let temp = `
-        <div class = "col product-item mx-auto p-2">
-          <div class = "product-img">
-              <img src = "${externalUrl}/${item.FilePath}/${item.FileName}" alt = "" class = "img-fluid d-block mx-auto">
-              <span class = "heart-icon">
+        <div class="col product-item mx-auto p-2">
+          <div class="product-img">
+              <img src="${externalUrl}/${item.FilePath}/${item.FileName}" alt="" class="img-fluid d-block mx-auto">
+              <span class="heart-icon">
                 <i class="fa-solid fa-tags"></i>
               </span>
           </div>
 
-          <div class = "product-info p-3">
+          <div class="product-info p-3">
             <i class="fa-solid fa-location-dot"></i>
-              <span class = "product-type">Location</span>
-              <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">${item.CarModel} ${item.CarManufacturerName} ${item.CarYear}</a>
-              <span class = "product-price">€${item.CarPriceRent}</span>
+              <span class="product-type">Location</span>
+              <a href="#" onclick="showModal(${item.CarId});" data-car-id="${item.CarId}" class="d-block text-dark text-decoration-none py-2 product-name" data-bs-toggle="modal" data-bs-target=".modal-window">
+                ${item.CarModel} ${item.CarManufacturerName} ${item.CarYear}
+              </a>
+              <span class="product-price">€${item.CarPriceRent}</span>
           </div>
         </div>
         `
@@ -500,6 +614,7 @@
           }
         }
       });
+
     </script>
   </body>
 </html>
