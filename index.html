@@ -13,10 +13,10 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -33,6 +33,15 @@
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
+    <style>
+    .container-flex {
+      display: flex; /* or inline-flex */
+      flex-wrap: wrap;
+      /*justify-content: center; /* Center horizontally */
+      align-items: center;    /* Center vertically */
+      height: 20vh;
+    }
+  </style>
   </head>
 
   <body>
@@ -406,7 +415,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Pend Name</button>
+            <a id="go-to-ask-for-loan" href="#" class="btn btn-primary" target="_blank">Go for it</a>
           </div>
         </div>
       </div>
@@ -470,7 +479,10 @@
     <script src="js/main.js"></script>
 
     <script type="module">
-      const externalUrl = "https://deleenautotemporal.online";
+      //const externalUrl = "https://deleenautotemporal.online";
+      const externalUrl = "http://localhost:8086";
+      const externalFrontEnd = "http://localhost:8082";
+      const internalPath = "/website-deleen";
       const apiCallId = "car/list/1/5/1/0";
       const fetchHeaders = { "Content-Type": "application/x-www-form-urlencoded", };
       let rowList = [];
@@ -483,6 +495,7 @@
         document.querySelector("#car-image").src = `${externalUrl}/${carItem.FilePath}/${carItem.FileName}`;
         document.getElementById("days-to-loan").value = 0;
         document.getElementById("total-to-pay").value = 0;
+        document.getElementById("go-to-ask-for-loan").setAttribute("href", `${externalFrontEnd}/?r=car-display&c=${carItem.CarId}`);
 
         const formData = {
           CarId: carItem.CarId,
@@ -491,6 +504,7 @@
         const data = new URLSearchParams();
         data.append('CarId', carItem.CarId);
         data.append('LanguageCode', 'en');
+        data.append('LanguageSubKey', 1)
 
         const response = await fetch(`${externalUrl}/car/feature/detail/localized/list`, {
           method: "POST",
@@ -500,36 +514,51 @@
 
         const result = await response.json();
         let i = 0;
-        let domResult = "";
+        let domResult = `<div class="container-flex">\n`;
 
         for (let key in result) {
           if (result[i].CarFeatureDetailIsUsed > 0){
             domResult +=
-`<span class="badge text-bg-primary">\n`
+`<span class="badge text-bg-primary">\n`;
+
+              if (result[i].CarFeatureIconType == 1){
+                domResult +=
+`  <span class="material-symbols-outlined">${result[i].CarFeatureIconName}</span>`;
+              }
+
+              if (result[i].CarFeatureIconType == 2){
+                domResult +=
+`  <img class="" width="24px" height="24px" src="${internalPath}/css/features/${result[i].CarFeatureIconName}"/> `;
+              }
+
               if (result[i].CarFeatureType == 0 && result[i].CarFeatureDetailValue > 0){
-                domResult += 
+                domResult +=
 `  <span class="badge rounded-pill text-bg-success">
     <i class="fa-solid fa-check"></i>
-  </span>\n`
+  </span>\n`;
               }
+
               if (result[i].CarFeatureType == 0 && result[i].CarFeatureDetailValue < 1){
-                domResult += 
+                domResult +=
 `  <span class="badge rounded-pill text-bg-danger">
     <i class="fa-solid fa-xmark"></i>
-  </span>\n`
+  </span>\n`;
               }
+
               if (result[i].CarFeatureType > 0){
                 domResult +=
-`  <span>${result[i].CarFriendlyNameLocalized}: ${result[i].CarFeatureDetailValue}</span>\n`
+`  <span class="">${result[i].CarFriendlyNameLocalized}: ${result[i].CarFeatureDetailValue}</span>\n`;
               }
               else{
-                domResult += 
-`  <span>${result[i].CarFriendlyNameLocalized}</span>\n`
+                domResult +=
+`  <span class="">${result[i].CarFriendlyNameLocalized}</span>\n`;
               }
-            domResult += `</span>\n`;
+
+              domResult += `</span>\u00A0\n`;
           }
           i++;
         }
+        domResult += "</div>\n";
         //console.log(domResult);
         document.querySelector(".modal-extra").innerHTML = domResult;
       };
