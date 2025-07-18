@@ -586,6 +586,7 @@
         document.getElementById("total-to-pay").value = `${total}`;
 
       };
+
       const response = await fetch(`${externalUrl}/${apiCallId}`, {
         method: "POST",
         headers: fetchHeaders,
@@ -598,7 +599,7 @@
 
       rowList.map(item =>{
         let temp = `
-        <div class="col product-item mx-auto p-2">
+        <div class="col product-item mx-auto p-2 itemDiv" style="cursor:pointer;" data-car-id="${item.CarId}" >
           <div class="product-img">
               <img src="${externalUrl}/${item.FilePath}/${item.FileName}" alt="" class="img-fluid d-block mx-auto">
               <span class="heart-icon">
@@ -609,7 +610,7 @@
           <div class="product-info p-3">
             <i class="fa-solid fa-location-dot"></i>
               <span class="product-type">Location</span>
-              <a href="#" onclick="showModal(${item.CarId});" data-car-id="${item.CarId}" class="d-block text-dark text-decoration-none py-2 product-name" data-bs-toggle="modal" data-bs-target=".modal-window">
+              <a id="car-link-${item.CarId}" href="#" onclick="showModal(${item.CarId});" class="d-block text-dark text-decoration-none py-2 product-name" data-bs-toggle="modal" data-bs-target=".modal-window">
                 ${item.CarModel} ${item.CarManufacturerName} ${item.CarYear}
               </a>
               <span class="product-price">€${item.CarPriceRent}</span>
@@ -620,6 +621,15 @@
       });
 
       document.getElementById("carrousel-content").innerHTML = newContent;
+
+      const divs = document.querySelectorAll('.itemDiv');
+      divs.forEach(div => {
+        div.addEventListener('click', function() {
+          var anchorId = `car-link-${div.dataset.carId}`;
+          const myLink = document.getElementById(anchorId);
+          myLink.click();
+        });
+      });
 
       $('.owl-carousel').owlCarousel({
         loop: true,
